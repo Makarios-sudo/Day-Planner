@@ -1,0 +1,7 @@
+activity/__pycache__
+DayPlanner/__pycache__
+activity/migrations
+users/__pycache__
+users/migrations
+requirements.txt
+db.sqlite3

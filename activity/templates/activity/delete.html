@@ -1,0 +1,31 @@
+{% extends 'activity/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container">
+    <div class="content justify-content-center text-center m-2">
+
+        <div class="alert alert" role="alert">
+           <hr>
+  
+        <form  method="POST">
+            {% csrf_token %}
+
+            <div class="alert alert-secondary" role="alert">
+                <h2 class="alert-heading col-sm-12 ">Are You Sure You want To Delete <b>"{{task.task| title}}"</b> ? </h2>
+                    
+                
+                <button class="btn btn-primary m-2" type="submit">Delete</button>  
+
+            </div>      
+        </form>
+
+        <a href="{% url 'plans' %}"><button class="btn btn-danger">Go Back</button></a>
+    </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

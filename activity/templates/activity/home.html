@@ -1,0 +1,29 @@
+{% extends 'activity/base.html' %}
+
+{% block content %}
+<div class="container ">
+<div class="content justify-content-center text-center  ">
+ 
+{%  if user.is_authenticated %}
+  <div class="m-5 header">
+    <h1 ><b>Welcome {{user.username | title }}  </b></h1>
+    <a href=" {% url 'logout' %} " class="link"><p class=" text-left" style="color: peru;"><b>Logout</b></p></a>
+  </div>
+{% endif %}
+
+
+<div class="alert alert-secondary  mt-5 " role="alert">
+
+    <h4 class="alert-heading">Take Charge Of Your Day</h4><hr>
+
+    <h3><a href=" {% url 'plans' %} "><button class="btn btn-success">View Existing Plan</button></a></h3><hr>
+
+    <h3 class="mb-0"> <a href=" {% url 'addplan' %} "><button class="btn btn-success">Add New Plan</button></a></h3>
+  </div>
+
+</div>
+</div>
+
+</div>
+
+{% endblock %}

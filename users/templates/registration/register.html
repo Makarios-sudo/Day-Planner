@@ -1,0 +1,58 @@
+{% extends 'activity/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="content justify-content-center text-center m-5">
+    <h2 class="header">Create a new account</h2>
+    <hr>
+    
+    <div class="alert alert-secondary mx-auto " role="alert">
+    <div class="form  m-5 ">
+
+        <form action="" method="POST" autocomplete="off">
+            {% csrf_token%}
+
+
+            <label >Username</label><br>
+                {{form.username}} <br>
+
+            <label >Enter Email</label><br>
+                {{form.email}} <br>
+            
+            <label>Enter Password</label><br>
+                {{form.password1}} <br>
+
+            <label >Confirm Password</label><br>
+                {{form.password2}} <br>
+
+            {% if form.errors %}
+
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        {{ error|escape }}
+                    {% endfor %}
+                {% endfor %}
+    
+                {% for error in form.non_field_errors %}
+                    {{ error|escape }}
+                {% endfor %}
+    
+            {% endif%}
+            
+            
+            
+            
+
+          <br>
+          <a href=" {% url 'login' %} "><button class="btn btn-primary">Register</button></a>
+         
+        </form>
+        <hr>
+        <p>Already have an Account? <a href="{% url 'login' %}"><button class="btn btn-success">Login</button></a></p>
+            
+</div>  
+</div>
+
+
+{% endblock %}

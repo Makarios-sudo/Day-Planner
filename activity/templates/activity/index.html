@@ -1,0 +1,35 @@
+{% extends 'activity/base.html' %}
+
+{% block content %}
+
+<div class="content ">
+    <div class="alert alert-secondary m-5 p-5 " role="alert">
+        
+            <h1 class="header text-center"><b>Welcome To DayPlan</b></h1>
+       
+        <hr>
+        <p class="d-flex justify-content-center text-center">We understand that life's activity dosen't always go as planned, that is why we are here to help your keep track of your plans .</p>
+        <hr>
+        <p class="mb-0 d-flex justify-content-center gap-2">
+            <a href=" {% url 'login' %} "><button class="btn btn-success" >Login</button></a>
+            <a href=" {% url 'register' %} "><button class="btn btn-success" >Register</button></a>
+        </p>
+    </div>
+
+</div>
+    
+   
+    
+    
+   
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

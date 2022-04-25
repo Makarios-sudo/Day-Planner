@@ -1,0 +1,43 @@
+{% extends 'activity/base.html' %}
+
+{% block content %}
+
+<div class="content justify-content-center text-center m-5">
+    <h2 class="header"><b>Login</b></h2>
+    <hr>
+     
+    <div class="alert alert-secondary mx-auto " role="alert">
+        <div class="form  m-5 ">
+
+            <form method="POST" autocomplete="off">
+                {% for message in messages %}
+                    {{message}}
+                {% endfor %} <br>
+
+                {% csrf_token %}
+
+                <label for="">Username</label> <br>
+                    {{form.username}} <br>
+
+                <label for="">Password</label> <br>
+                    {{form.password}} <br> <br>
+            
+
+                <button  type="submit" class="btn btn-primary">Login</button>
+
+            </form>
+
+            <p>Don't have an Account? <a href="{% url 'register' %}"><button class="btn btn-success">Register</button></a></p>
+
+            
+        </div>
+
+    </div> 
+
+    
+</div>
+</div>
+
+
+
+{% endblock %}

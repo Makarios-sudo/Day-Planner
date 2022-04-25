@@ -1,0 +1,20 @@
+
+body{
+    background-color: black
+}
+
+.accordion_text{
+    position: center;
+}
+
+.accordion-button.accordion-text{
+    text-align: center;
+}
+
+.header  {
+    color: chocolate;
+}
+
+.link{
+    text-decoration: none;
+}

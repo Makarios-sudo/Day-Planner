@@ -1,0 +1,30 @@
+{% extends 'activity/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="container">
+    <div class="content justify-content-center text-center m-2">
+
+        <div class="alert alert" role="alert">
+            <h2 class="header"><b>Add New Plans</b></h2><hr>
+  
+        <form  method="POST" autocomplete="off">
+            {% csrf_token %}
+
+            <div class="alert alert-secondary" role="alert">
+                    
+                {{form|crispy}}
+                <button class="btn btn-primary m-2" type="submit">Add Plan</button>  
+
+            </div>      
+        </form>
+
+        <a href="{% url 'plans' %}"><button class="btn btn-danger">Go Back</button></a>
+    </div>
+    </div>
+</div>
+
+{% endblock %}
